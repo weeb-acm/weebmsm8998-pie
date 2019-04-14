@@ -1336,7 +1336,7 @@ static bool key_back_pressed;
 static bool key_appselect_pressed;
 static bool key_home_pressed;
 #endif
-static inline void __int_touch(void)
+static inline void int_touch(void)
 {
 	int ret = -1, i = 0;
 	uint8_t buf[90] = { 0 };
@@ -1538,11 +1538,6 @@ static inline void __int_touch(void)
 	if (ts->in_gesture_mode == 1 && ts->is_suspended == 1)
 		gesture_judge(ts);
 #endif
-}
-
-void int_touch(void)
-{
-	__int_touch();
 }
 
 #ifdef SUPPORT_TP_TOUCHKEY
